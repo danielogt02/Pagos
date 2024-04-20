@@ -5,10 +5,9 @@
     use App\Http\Controllers\homeController;
 
     Route::get('/', HomeController::class);
-
-    Route::get('cursos', [CursoController::class, 'index']);
-    route::get('cursos/create',[CursoController::class, 'create']);
-    Route::get('cursos/{curso}', [CursoController::class, 'show']);
+    Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
+    route::get('cursos/create',[CursoController::class, 'create'])->name('cursos.create');
+    Route::get('cursos/{id}', [CursoController::class, 'show'])->name('cursos.show');
 
     /*Route::controller(CursoController::class)->group(function(){
         Route::get('cursos', 'index');
